@@ -3,7 +3,7 @@
 Lennel Chua | P1828852
 
 ## 1. Sequence Diagram
-![](images/Task6_Stripe_SequenceDiagram.jpeg)
+![](images/Task6_SequenceDiagram.jpeg)
 
 
 ## 2. 3 Successive payment
