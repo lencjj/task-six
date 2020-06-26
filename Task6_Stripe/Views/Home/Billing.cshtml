@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Billing";
+}
+
+<h2>Billing</h2>
+<form method="POST" action="/api/Billing/CreateSession">
+    <button type="submit">Manage billing</button>
+</form>
+<br>
+
+<form method="POST" onsubmit="submitPlan()">
+    <select name="plans" id="plans">
+        <option value="1">$0.70/Day</option>
+        <option value="2">$15.00/Month</option>
+    </select>
+    <button type="submit">Subscribe to web host</button>
+</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    function submitPlan() {
+        $.ajax({
+            url: '/api/Billing/CreateSubscription/' + $('#plans').val(),
+            type: 'POST',
+            async: false,
+            success: function () {
+                alert("Subscription created!");
+            },
+            error: function () {
+                alert("Error");
+            }
+        });
+    }
+</script>
+
